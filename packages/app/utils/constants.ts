@@ -6,9 +6,10 @@ export const ENDPOINTS = {
 
 export const COLORS = {
     blueDemon: '#0b5ed7',
-    black: '#000',
-    white: '#fff',
+    black: '#000000',
+    white: '#ffffff',
     green: '#198754',
-    red: '#f00',
-    gray: '#ccc'
+    red: '#dc3545',
+    gray: '#6c757d',
+    dark: '#212529'
 }
