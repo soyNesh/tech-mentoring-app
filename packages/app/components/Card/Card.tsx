@@ -1,21 +1,34 @@
-import React, { FC } from "react";
-import { Wrapper, Title, Status, Image, StatusTypes } from './Card.styles';
+import React, { FC } from 'react'
+import { Link } from 'solito/link'
+import { strings } from 'app/utils/strings'
+import { ICharacterProps } from 'app/models/Character.model'
+import {
+  Wrapper,
+  Title,
+  StatusView,
+  Status,
+  Image,
+  CardContent,
+  LocationLabel,
+  Location,
+} from './Card.styles'
 
-export interface ICardProps {
-    name: string,
-    image: string,
-    status: StatusTypes,
-    id: number
-}
-
-const Card:FC<ICardProps> = ({name, image, status, id}) => {
-    return (
+const Card: FC<ICharacterProps> = ({ name, image, status, location, id }) => {
+  return (
     <Wrapper>
-        <Image source={{ uri: image }} resizeMode="cover"/>
-        <Title>{name}</Title>
-        <Status type={status}>{status}</Status>
-    </Wrapper>)
-    
+      <Link href={`/user/${id}`}>
+        <Image source={{ uri: image }} resizeMode="cover" />
+        <StatusView type={status}>
+          <Status>{status}</Status>
+        </StatusView>
+        <CardContent>
+          <Title>{name}</Title>
+          <LocationLabel>{strings.lastLocationLabel}</LocationLabel>
+          <Location>{location.name}</Location>
+        </CardContent>
+      </Link>
+    </Wrapper>
+  )
 }
 
-export default Card;
+export default Card
