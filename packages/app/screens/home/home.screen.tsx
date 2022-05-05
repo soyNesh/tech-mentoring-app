@@ -43,9 +43,7 @@ export function HomeScreen() {
   return (
     <CardList
       data={data}
-      headerComponent={
-        <CharacterHeader setUrl={setUrl} updateItems={updateItems} />
-      }
+      headerComponent={<CharacterHeader setUrl={setUrl} />}
       footerComponent={<Loader loading={loading} />}
       initialNumToRender={20}
       onEndReached={onEnd}

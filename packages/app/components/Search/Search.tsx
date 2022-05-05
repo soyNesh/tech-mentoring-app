@@ -10,7 +10,7 @@ import {
   SearchButton,
 } from './Search.styles'
 
-const Search: FC<any> = ({ setUrl, updateItems }) => {
+const Search: FC<any> = ({ setUrl }) => {
   const [search, setSearch] = useState('')
 
   const onSearch = useCallback((field, value) => {
@@ -19,7 +19,6 @@ const Search: FC<any> = ({ setUrl, updateItems }) => {
 
   const clearSearch = useCallback(() => {
     setSearch('')
-
     setUrl(ENDPOINTS.character)
   }, [])
 

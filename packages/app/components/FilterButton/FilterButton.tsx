@@ -7,6 +7,7 @@ const FilterButton = ({ callback, text, field, selected, onSelect }) => {
   const { updateItems } = useStore()
 
   const onButtonPress = useCallback(() => {
+    updateItems([])
     callback(`${ENDPOINTS.character}?${field.toLowerCase()}=${text}`)
     onSelect(text)
   }, [text])

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { ENDPOINTS } from 'app/utils/constants'
 import { strings } from 'app/utils/strings'
-import { useStore } from 'app/provider/store'
 import { ExpandableListItem } from './ExpandableListItem'
 import {
   ExpandableListStyled,
@@ -11,8 +10,6 @@ import {
 } from './ExpandableList.styles'
 
 const ExpandableList = ({ setUrl }) => {
-  const { updateItems } = useStore()
-
   const [currentItem, setCurrentItem] = useState(-1)
 
   const statusArr = ['Alive', 'Dead', 'Unknown']
