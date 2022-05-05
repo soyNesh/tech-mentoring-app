@@ -29,7 +29,6 @@ export function LocationScreen() {
   }, [residents])
 
   useEffect(() => {
-    updateItems([])
     setUrl(`${ENDPOINTS.location}${selectedLocation}`)
   }, [selectedLocation])
 

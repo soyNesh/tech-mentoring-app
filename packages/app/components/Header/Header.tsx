@@ -1,10 +1,12 @@
 import React from 'react'
+import { strings } from 'app/utils/strings'
 import { HeaderStyled, WikiStyled } from './Header.styles'
 
 const Header = () => {
   return (
     <HeaderStyled>
-      Rick & Morty <WikiStyled>Wiki</WikiStyled>
+      {strings.appTitle}
+      <WikiStyled>{strings.wikiSpan}</WikiStyled>
     </HeaderStyled>
   )
 }

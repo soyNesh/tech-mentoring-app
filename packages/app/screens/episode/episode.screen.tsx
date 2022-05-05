@@ -29,7 +29,6 @@ export function EpisodeScreen() {
   }, [characters])
 
   useEffect(() => {
-    updateItems([])
     setUrl(`${ENDPOINTS.episode}${selectedEpisode}`)
   }, [selectedEpisode])
 

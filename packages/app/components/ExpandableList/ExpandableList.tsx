@@ -30,7 +30,6 @@ const ExpandableList = ({ setUrl }) => {
   const genderArr = ['female', 'male', 'genderless', 'unknown']
 
   const clearFilters = () => {
-    updateItems([])
     setUrl(ENDPOINTS.character)
     setCurrentItem(-1)
   }

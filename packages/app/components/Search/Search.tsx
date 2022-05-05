@@ -14,13 +14,12 @@ const Search: FC<any> = ({ setUrl, updateItems }) => {
   const [search, setSearch] = useState('')
 
   const onSearch = useCallback((field, value) => {
-    updateItems([])
     setUrl(`${ENDPOINTS.character}?${field}=${value}`)
   }, [])
 
   const clearSearch = useCallback(() => {
     setSearch('')
-    updateItems([])
+
     setUrl(ENDPOINTS.character)
   }, [])
 

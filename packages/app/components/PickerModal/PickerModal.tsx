@@ -73,7 +73,6 @@ const PickerModal: FC<IPickerModalProps> = ({
         <Picker
           selectedValue={selectedValues.selectedValue}
           onValueChange={(itemValue) => {
-            updateItems([])
             selectedValues.setSelectedValue?.(itemValue || 1)
             setIsModalOpen(false)
           }}
