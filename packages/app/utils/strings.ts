@@ -1,4 +1,6 @@
 export const strings = Object.freeze({
+  appTitle: 'Rick & Morty ',
+  wikiSpan: 'Wiki',
   charactersTitle: 'Characters',
   episodesTitle: 'Episodes',
   locationsTitle: 'Locations',
