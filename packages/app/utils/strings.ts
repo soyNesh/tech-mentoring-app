@@ -1,0 +1,17 @@
+export const strings = Object.freeze({
+  charactersTitle: 'Characters',
+  episodesTitle: 'Episodes',
+  locationsTitle: 'Locations',
+  lastLocationLabel: 'Last location',
+  episodeLabel: 'Episode: ',
+  airDateLabel: 'Air Date: ',
+  locationLabel: 'Location: ',
+  dimensionLabel: 'Dimension: ',
+  typeLabel: 'Type: ',
+  pickEpisodeLabel: 'Pick Episode',
+  pickLocationLabel: 'Pick Location',
+  pickEpisodeItemLabel: 'Episode - ',
+  pickLocationItemLabel: 'Location - ',
+  filtersTitleLabel: 'Filters',
+  clearFiltersLabel: 'Clear filters',
+})

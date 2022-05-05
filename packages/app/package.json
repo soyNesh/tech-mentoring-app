@@ -3,10 +3,12 @@
   "name": "app",
   "main": "index.ts",
   "dependencies": {
+    "@react-native-picker/picker": "^2.4.1",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.0",
     "expo-linking": "^3.0.0",
     "moti": "0.18.0-alpha.8",
+    "react-native-elements": "^3.4.2",
     "solito": "0.0.22",
     "styled-components": "^5.3.5"
   },

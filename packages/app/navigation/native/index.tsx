@@ -1,7 +1,12 @@
+import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-
-import { HomeScreen } from '../../screens/home/home.screen'
-import { UserDetailScreen } from '../../screens/user/user.screen'
+import { strings } from 'app/utils/strings'
+import { Categories } from '../../models/Character.model'
+import { useStore } from 'app/provider/store'
+import { Header } from 'app/components/Header'
+import { MenuButton } from 'app/components/MenuButton'
+import { HomeScreen } from 'app/screens/home/home.screen'
+import { UserDetailScreen } from 'app/screens/user/user.screen'
 
 const Stack = createNativeStackNavigator<{
   home: undefined
@@ -11,20 +16,37 @@ const Stack = createNativeStackNavigator<{
 }>()
 
 export function NativeNavigation() {
+  const { currentView } = useStore()
+
+  const { charactersTitle, episodesTitle, locationsTitle } = strings
+
+  let title = charactersTitle
+
+  if (currentView === Categories.episodes) {
+    title = episodesTitle
+  }
+
+  if (currentView === Categories.locations) {
+    title = locationsTitle
+  }
+
   return (
     <Stack.Navigator>
       <Stack.Screen
         name="home"
         component={HomeScreen}
         options={{
-          title: 'Home',
+          headerTitle: () => <Header />,
+          headerRight: () => <MenuButton />,
         }}
       />
       <Stack.Screen
         name="user-detail"
         component={UserDetailScreen}
         options={{
-          title: 'User',
+          headerTitle: () => <Header />,
+          headerRight: () => <MenuButton />,
+          headerBackTitle: title,
         }}
       />
     </Stack.Navigator>
