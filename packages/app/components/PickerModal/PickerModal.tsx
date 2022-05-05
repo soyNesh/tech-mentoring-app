@@ -32,7 +32,7 @@ const PickerModal: FC<IPickerModalProps> = ({
   selectedLocation = null,
   setSelectedLocation = null,
 }) => {
-  const { currentView } = useStore()
+  const { updateItems, currentView } = useStore()
   const [episodesUrl] = useState(`${ENDPOINTS.episode}`)
   const [locationsUrl] = useState(`${ENDPOINTS.location}`)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -73,6 +73,7 @@ const PickerModal: FC<IPickerModalProps> = ({
         <Picker
           selectedValue={selectedValues.selectedValue}
           onValueChange={(itemValue) => {
+            updateItems([])
             selectedValues.setSelectedValue?.(itemValue || 1)
             setIsModalOpen(false)
           }}
